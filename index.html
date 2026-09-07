@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Metteu AK Saragih — Portfolio</title>
+    <meta
+      name="description"
+      content="Business-development and UI/UX design portfolio for Metteu AK Saragih, Information Systems undergraduate at Universitas Brawijaya."
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #181510;
+        --ink-soft: #5b564c;
+        --ink-faint: #8c8578;
+        --paper: #f2efe7;
+        --paper-raised: #fbfaf6;
+        --line: #dcd6c7;
+        --line-strong: #c7bfac;
+        --gold: #9c6a1e;
+        --gold-ink: #6f4c16;
+        --gold-soft: #eadfc2;
+        --teal: #1f6e68;
+        --teal-soft: #dce9e4;
+        --bronze: #8a5a3c;
+        --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+        --font-sans: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+        --max: 74rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          --ink: #ede9df;
+          --ink-soft: #b3ac9c;
+          --ink-faint: #7d7768;
+          --paper: #15130f;
+          --paper-raised: #1d1b15;
+          --line: #332f25;
+          --line-strong: #453f30;
+          --gold: #d9a94e;
+          --gold-ink: #efc978;
+          --gold-soft: rgba(217, 169, 78, 0.14);
+          --teal: #5fc2b7;
+          --teal-soft: rgba(95, 194, 183, 0.12);
+          --bronze: #c08a63;
+        }
+      }
+      :root[data-theme='dark'] {
+        --ink: #ede9df;
+        --ink-soft: #b3ac9c;
+        --ink-faint: #7d7768;
+        --paper: #15130f;
+        --paper-raised: #1d1b15;
+        --line: #332f25;
+        --line-strong: #453f30;
+        --gold: #d9a94e;
+        --gold-ink: #efc978;
+        --gold-soft: rgba(217, 169, 78, 0.14);
+        --teal: #5fc2b7;
+        --teal-soft: rgba(95, 194, 183, 0.12);
+        --bronze: #c08a63;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+        background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 64px 64px;
+        background-attachment: fixed;
+        background-position: -1px -1px;
+      }
+      @media (max-width: 640px) {
+        body {
+          background-size: 40px 40px;
+        }
+      }
+
+      ::selection {
+        background: var(--gold-soft);
+        color: var(--gold-ink);
+      }
+
+      a {
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 600;
+        text-wrap: balance;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+      ul,
+      dl,
+      dd {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      img,
+      svg {
+        max-width: 100%;
+        display: block;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 1.75rem;
+      }
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 0 1.25rem;
+        }
+      }
+      @media (max-width: 380px) {
+        .wrap {
+          padding: 0 1rem;
+        }
+      }
+
+      /* ---------- top bar ---------- */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background: color-mix(in srgb, var(--paper) 88%, transparent);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+      }
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.85rem 1.75rem;
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .brand {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        color: var(--ink);
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .brand b {
+        color: var(--gold-ink);
+        font-weight: 500;
+      }
+      @media (max-width: 420px) {
+        .brand .brand-suffix {
+          display: none;
+        }
+      }
+      nav.pagenav {
+        display: flex;
+        gap: 1.3rem;
+      }
+      nav.pagenav a {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--ink-soft);
+        padding: 0.3rem 0;
+        border-bottom: 1px solid transparent;
+        white-space: nowrap;
+        transition:
+          color 0.15s ease,
+          border-color 0.15s ease;
+      }
+      nav.pagenav a:hover,
+      nav.pagenav a.active {
+        color: var(--ink);
+        border-color: var(--gold);
+      }
+      .btn-cv {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        padding: 0.45rem 0.85rem;
+        border: 1px solid var(--gold);
+        color: var(--gold-ink);
+        background: var(--gold-soft);
+        text-decoration: none;
+        flex: none;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .btn-cv:hover {
+        background: var(--gold-ink);
+        color: var(--paper-raised);
+        border-color: var(--gold-ink);
+      }
+      @media (max-width: 1100px) {
+        nav.pagenav {
+          gap: 0.85rem;
+        }
+        nav.pagenav a {
+          font-size: 0.65rem;
+        }
+      }
+      @media (max-width: 900px) {
+        nav.pagenav {
+          display: none;
+        }
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        padding: 4.2rem 0 3.2rem;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 19rem;
+        gap: 3rem;
+        align-items: start;
+      }
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 2.4rem;
+        }
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 1.6rem;
+      }
+      .eyebrow::before {
+        content: '';
+        width: 22px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+        flex: none;
+      }
+      .hero h1 {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-size: clamp(2.6rem, 9vw, 5.6rem);
+        line-height: 0.98;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+      }
+      .hero .role {
+        margin-top: 1rem;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
+        color: var(--ink-soft);
+      }
+      .hero .role em {
+        font-style: normal;
+        color: var(--teal);
+      }
+      .hero .role i {
+        font-style: normal;
+        color: var(--gold-ink);
+      }
+      .hero-lede {
+        margin-top: 1.8rem;
+        max-width: 38rem;
+        font-size: 1.1rem;
+        color: var(--ink-soft);
+        font-weight: 400;
+      }
+      .hero-lede strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .cta-row {
+        display: flex;
+        gap: 0.9rem;
+        margin-top: 2.2rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.25rem;
+        border-radius: 2px;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
+      }
+      .btn.solid {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .btn.solid:hover {
+        background: var(--gold-ink);
+        border-color: var(--gold-ink);
+      }
+      .btn.ghost:hover {
+        background: var(--paper-raised);
+      }
+
+      /* dossier card */
+      .frame {
+        position: relative;
+        border: 1px solid var(--line-strong);
+        background: var(--paper-raised);
+        padding: 1.4rem;
+      }
+      .frame::before,
+      .frame::after,
+      .frame .fc2::before,
+      .frame .fc2::after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        border-color: var(--frame-accent, var(--teal));
+        border-style: solid;
+        border-width: 0;
+      }
+      .frame::before {
+        top: -1px;
+        left: -1px;
+        border-top-width: 2px;
+        border-left-width: 2px;
+      }
+      .frame::after {
+        top: -1px;
+        right: -1px;
+        border-top-width: 2px;
+        border-right-width: 2px;
+      }
+      .frame .fc2 {
+        position: absolute;
+        inset: 0;
+      }
+      .frame .fc2::before {
+        bottom: -1px;
+        left: -1px;
+        top: auto;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+      }
+      .frame .fc2::after {
+        bottom: -1px;
+        right: -1px;
+        top: auto;
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+      }
+      .frame-label {
+        position: absolute;
+        top: -1.6rem;
+        left: -1px;
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        color: var(--frame-accent, var(--teal));
+        letter-spacing: 0.03em;
+      }
+      .dossier {
+        width: 100%;
+        max-width: 19rem;
+        justify-self: end;
+        margin-top: 0.5rem;
+      }
+      @media (max-width: 960px) {
+        .dossier {
+          max-width: 26rem;
+          justify-self: stretch;
+          margin: 0 auto;
+        }
+      }
+      .dossier-list > div {
+        margin-bottom: 0.85rem;
+      }
+      .dossier-list > div:last-child {
+        margin-bottom: 0;
+      }
+      .dossier-list dt {
+        font-family: var(--font-mono);
+        font-size: 0.63rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--ink-faint);
+      }
+      .dossier-list dd {
+        font-size: 0.94rem;
+        color: var(--ink);
+        font-weight: 500;
+        margin-top: 0.2rem;
+      }
+      .dossier-cv {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1.3rem;
+      }
+      .dossier-note {
+        display: block;
+        text-align: center;
+        margin-top: 0.6rem;
+        font-family: var(--font-mono);
+        font-size: 0.63rem;
+        color: var(--ink-faint);
+        letter-spacing: 0.02em;
+      }
+
+      /* stat ledger strip */
+      .ledger {
+        margin-top: 3rem;
+        border-top: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--line-strong);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .ledger div {
+        padding: 1.1rem 1.3rem;
+        border-left: 1px solid var(--line);
+        min-width: 0;
+      }
+      .ledger div:first-child {
+        border-left: none;
+      }
+      .ledger .num {
+        font-family: var(--font-mono);
+        font-variant-numeric: tabular-nums;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--ink);
+        overflow-wrap: break-word;
+      }
+      .ledger .lbl {
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin-top: 0.35rem;
+      }
+      @media (max-width: 780px) {
+        .ledger {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ledger div:nth-child(2n + 1) {
+          border-left: none;
+        }
+        .ledger div:nth-child(n + 3) {
+          border-top: 1px solid var(--line);
+        }
+      }
+      @media (max-width: 420px) {
+        .ledger .num {
+          font-size: 1.05rem;
+        }
+      }
+
+      /* ---------- sections ---------- */
+      section {
+        padding: 4.2rem 0;
+        scroll-margin-top: 4.5rem;
+      }
+      section + section {
+        border-top: 1px solid var(--line);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 8rem 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2.6rem;
+        align-items: baseline;
+      }
+      .section-head .idx {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--ink-faint);
+        letter-spacing: 0.03em;
+      }
+      .section-head h2 {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(1.6rem, 5vw, 2.6rem);
+        color: var(--ink);
+      }
+      @media (max-width: 640px) {
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+      }
+
+      .section-body {
+        display: grid;
+        grid-template-columns: 8rem 1fr;
+        gap: 1.5rem;
+      }
+      @media (max-width: 640px) {
+        .section-body {
+          grid-template-columns: 1fr;
+        }
+      }
+      .section-body > .spacer {
+        display: block;
+      }
+      @media (max-width: 640px) {
+        .section-body > .spacer {
+          display: none;
+        }
+      }
+
+      .prose {
+        max-width: 42rem;
+        font-size: 1.02rem;
+        color: var(--ink-soft);
+      }
+      .prose strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .prose + .prose {
+        margin-top: 1.1rem;
+      }
+
+      /* ---------- venture card ---------- */
+      .venture {
+        background: var(--paper-raised);
+        border: 1px solid var(--line-strong);
+        padding: 2rem;
+        position: relative;
+      }
+      @media (max-width: 480px) {
+        .venture {
+          padding: 1.4rem;
+        }
+      }
+      .venture-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px dashed var(--line-strong);
+      }
+      .venture-name {
+        font-family: var(--font-serif);
+        font-size: 1.9rem;
+      }
+      .venture-meta {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        margin-top: 0.3rem;
+      }
+      .badge {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.03em;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid var(--gold);
+        color: var(--gold-ink);
+        white-space: nowrap;
+        background: var(--gold-soft);
+      }
+      .badge.teal {
+        border-color: var(--teal);
+        color: var(--teal);
+        background: var(--teal-soft);
+      }
+      .checklist {
+        display: grid;
+        gap: 0.65rem;
+        margin-top: 1rem;
+      }
+      .checklist li {
+        display: flex;
+        gap: 0.7rem;
+        font-size: 0.96rem;
+        color: var(--ink-soft);
+        align-items: flex-start;
+      }
+      .checklist li::before {
+        content: '—';
+        color: var(--gold);
+        flex: none;
+        font-family: var(--font-mono);
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.4rem;
+      }
+      .tag {
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 0.3rem 0.6rem;
+        border: 1px solid var(--line-strong);
+        color: var(--ink-soft);
+      }
+
+      /* ---------- design section / frame mock ---------- */
+      .design-grid {
+        display: grid;
+        grid-template-columns: 1fr 15rem;
+        gap: 2.2rem;
+      }
+      @media (max-width: 900px) {
+        .design-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .app-frame {
+        justify-self: center;
+        width: 100%;
+        max-width: 15rem;
+      }
+      @media (max-width: 900px) {
+        .app-frame {
+          max-width: 13rem;
+        }
+      }
+      .mock-screen {
+        border: 1px solid var(--line-strong);
+        border-radius: 14px;
+        padding: 0.9rem;
+        background: var(--paper);
+      }
+      .mock-bar {
+        height: 8px;
+        width: 55%;
+        background: var(--line-strong);
+        border-radius: 2px;
+        margin-bottom: 1rem;
+      }
+      .mock-tile {
+        border: 1px solid var(--line-strong);
+        border-radius: 8px;
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .mock-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--teal-soft);
+        border: 1px solid var(--teal);
+        flex: none;
+      }
+      .mock-lines {
+        flex: 1;
+        display: grid;
+        gap: 0.35rem;
+        min-width: 0;
+      }
+      .mock-lines span {
+        display: block;
+        height: 6px;
+        background: var(--line-strong);
+        border-radius: 2px;
+      }
+      .mock-lines span:last-child {
+        width: 60%;
+      }
+      .mock-aa {
+        margin-top: 0.9rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        color: var(--ink-faint);
+        letter-spacing: 0.02em;
+        border-top: 1px dashed var(--line-strong);
+        padding-top: 0.7rem;
+        gap: 0.4rem;
+      }
+      .mock-aa b {
+        font-size: 0.95rem;
+        color: var(--ink);
+        font-family: var(--font-sans);
+        font-weight: 700;
+      }
+      .mock-aa .big {
+        font-size: 1.2rem;
+      }
+
+      /* ---------- ledger table (leadership / education) ---------- */
+      .rows {
+        display: grid;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        gap: 1.2rem;
+        padding: 1.3rem 0;
+        border-top: 1px solid var(--line);
+      }
+      .rows .row:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .row .yr {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--ink-faint);
+        font-variant-numeric: tabular-nums;
+      }
+      .row h3 {
+        font-size: 1.02rem;
+        font-weight: 600;
+      }
+      .row .org {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        margin-top: 0.2rem;
+      }
+      .row p {
+        margin-top: 0.55rem;
+        font-size: 0.94rem;
+        color: var(--ink-soft);
+        max-width: 40rem;
+      }
+      @media (max-width: 640px) {
+        .row {
+          grid-template-columns: 1fr;
+          gap: 0.3rem;
+        }
+      }
+
+      .row-edu {
+        grid-template-columns: 5rem 1fr auto;
+        align-items: center;
+      }
+      @media (max-width: 640px) {
+        .row-edu {
+          grid-template-columns: 1fr;
+          gap: 0.6rem;
+        }
+        .row-edu .gpa-badge {
+          justify-self: start;
+        }
+      }
+      .gpa-badge {
+        font-family: var(--font-mono);
+        text-align: right;
+        padding: 0.5rem 0.95rem;
+        border: 1px solid var(--gold);
+        background: var(--gold-soft);
+        white-space: nowrap;
+      }
+      .gpa-badge b {
+        display: block;
+        font-size: 1.1rem;
+        color: var(--gold-ink);
+        font-variant-numeric: tabular-nums;
+        font-weight: 500;
+      }
+      .gpa-badge span {
+        display: block;
+        font-size: 0.6rem;
+        color: var(--ink-faint);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-top: 0.15rem;
+      }
+
+      /* ---------- awards ---------- */
+      .awards {
+        display: grid;
+        gap: 0;
+      }
+      .award {
+        display: grid;
+        grid-template-columns: 3.4rem 1fr auto;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem 0;
+        border-top: 1px solid var(--line);
+      }
+      .awards .award:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .rank {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.03em;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        border: 1px solid var(--line-strong);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--ink-soft);
+        flex: none;
+      }
+      .rank.gold {
+        border-color: var(--gold);
+        color: var(--gold-ink);
+        background: var(--gold-soft);
+      }
+      .rank.bronze {
+        border-color: var(--bronze);
+        color: var(--bronze);
+      }
+      .rank.teal {
+        border-color: var(--teal);
+        color: var(--teal);
+        background: var(--teal-soft);
+      }
+      .award .title {
+        font-weight: 600;
+        font-size: 0.96rem;
+      }
+      .award .sub {
+        font-family: var(--font-mono);
+        font-size: 0.76rem;
+        color: var(--ink-soft);
+        margin-top: 0.2rem;
+      }
+      .award .yr {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--ink-faint);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      @media (max-width: 640px) {
+        .award {
+          grid-template-columns: 2.6rem 1fr;
+        }
+        .award .yr {
+          grid-column: 2;
+        }
+      }
+
+      /* ---------- skills ---------- */
+      .skill-cols {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 2rem;
+      }
+      .skill-col h3 {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--ink-faint);
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--line-strong);
+      }
+      .skill-col ul {
+        display: grid;
+        gap: 0.6rem;
+      }
+      .skill-col li {
+        font-size: 0.96rem;
+        color: var(--ink-soft);
+      }
+      .skill-col li::before {
+        content: '· ';
+        color: var(--gold);
+      }
+
+      /* ---------- footer / contact ---------- */
+      footer {
+        padding: 4.2rem 0 3rem;
+        border-top: 1px solid var(--line);
+      }
+      .sign {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.7rem, 5vw, 2.9rem);
+        max-width: 36rem;
+        color: var(--ink);
+      }
+      .contact-grid {
+        margin-top: 2.6rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+        gap: 1.5rem 1rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--line-strong);
+      }
+      .contact-grid a,
+      .contact-grid span {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 0.76rem;
+        color: var(--ink-soft);
+        text-decoration: none;
+        word-break: break-word;
+      }
+      .contact-grid .k {
+        color: var(--ink-faint);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.4rem;
+      }
+      .contact-grid a:hover {
+        color: var(--teal);
+      }
+      .fineprint {
+        margin-top: 3rem;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        color: var(--ink-faint);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a
+          class="brand"
+          href="#top"
+          ><b>M.</b>AKS<span class="brand-suffix"> — PORTFOLIO</span></a
+        >
+        <nav
+          class="pagenav"
+          id="pagenav"
+        >
+          <a href="#about">About</a>
+          <a href="#ventures">Ventures</a>
+          <a href="#design">Design</a>
+          <a href="#leadership">Leadership</a>
+          <a href="#awards">Awards</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a
+          class="btn-cv"
+          href="https://canva.link/jrcck8t0pwypd34"
+          target="_blank"
+          rel="noopener"
+          >View CV ↗</a
+        >
+      </div>
+    </div>
+
+    <div
+      id="top"
+      class="wrap hero"
+    >
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">Information Systems — Universitas Brawijaya</div>
+          <h1>Metteu&nbsp;AK<br />Saragih</h1>
+          <p class="role">Business Development &amp; Entrepreneurship <i>·</i> <em>UI/UX Design</em></p>
+          <p class="hero-lede">
+            I build ventures, then I design the products behind them. Right now that means running
+            <strong>RuangTitip</strong> after its first seed round, and having just designed <strong>Eduvia</strong>, an accessibility-first learning app that took first place nationally.
+          </p>
+          <div class="cta-row">
+            <a
+              class="btn solid"
+              href="mailto:metteusaragih@gmail.com"
+              >Email me</a
+            >
+            <a
+              class="btn ghost"
+              href="https://linkedin.com/in/metteuaksaragih"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn ↗</a
+            >
+          </div>
+        </div>
+
+        <aside
+          class="dossier frame reveal"
+          style="--frame-accent: var(--gold-ink)"
+        >
+          <span class="frame-label">PROFILE</span>
+          <div class="fc2"></div>
+          <dl class="dossier-list">
+            <div>
+              <dt>Currently</dt>
+              <dd>CEO &amp; Co-Founder, RuangTitip</dd>
+            </div>
+            <div>
+              <dt>Studying</dt>
+              <dd>Information Systems, 5th semester</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>Malang, Indonesia</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Open to product &amp; venture talks</dd>
+            </div>
+          </dl>
+          <a
+            class="btn solid dossier-cv"
+            href="https://canva.link/jrcck8t0pwypd34"
+            target="_blank"
+            rel="noopener"
+            >View full CV ↗</a
+          >
+          <span class="dossier-note">PDF · Canva</span>
+        </aside>
+      </div>
+
+      <div class="ledger reveal">
+        <div>
+          <div class="num">3.62</div>
+          <div class="lbl">GPA · 4.00 scale</div>
+        </div>
+        <div>
+          <div class="num">IDR 7,000,000</div>
+          <div class="lbl">Seed funding, RuangTitip</div>
+        </div>
+        <div>
+          <div class="num">1st Place</div>
+          <div class="lbl">National UI/UX Design 2026</div>
+        </div>
+        <div>
+          <div class="num">IDR 400,000,000</div>
+          <div class="lbl">Event budget managed</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 01 / About</span>
+          <h2>Two spreadsheets, one screen</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div>
+            <p class="prose reveal">
+              I'm a fifth-semester Information Systems student at Universitas Brawijaya, and most of what I actually know about business and design, I learned outside a lecture hall — turning a storage-rental idea into a funded startup, and
+              designing a learning app for people with disabilities that ended up winning a national competition.
+            </p>
+            <p class="prose reveal">
+              I like sitting at the point where a business case and an interface meet: the numbers have to work, and so does the screen. Outside RuangTitip and Eduvia, I've managed budgets north of
+              <strong>IDR 400 million</strong> for student events, taught business process modeling to my juniors, and sat on my faculty's student senate — most of it in service of making sure a plan survives contact with reality, not just
+              the pitch deck.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ventures">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 02 / Ventures</span>
+          <h2>Building the business</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div class="venture reveal">
+            <div class="venture-top">
+              <div>
+                <div class="venture-name">RuangTitip</div>
+                <div class="venture-meta">CEO &amp; Co-Founder — Launchpad Business Incubation Program</div>
+              </div>
+              <span class="badge">IDR 7,000,000 seed funding · 2026</span>
+            </div>
+            <p
+              class="prose"
+              style="max-width: 100%"
+            >
+              An on-demand item-storage startup I took from a concept on a napkin through market validation and into a working product — the kind of venture where you're doing customer interviews on Monday and reconciling the budget by
+              Friday.
+            </p>
+            <ul class="checklist">
+              <li>Founded and led RuangTitip from initial concept through market validation and product development.</li>
+              <li>Secured IDR 7,000,000 in seed funding from a national business incubation program.</li>
+              <li>Directed market research, business strategy, and go-to-market planning while managing a cross-functional founding team.</li>
+              <li>Owned end-to-end decision-making — product roadmap, operations, and every investor and mentor conversation.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Market Research</span>
+              <span class="tag">Business Strategy</span>
+              <span class="tag">Go-to-Market</span>
+              <span class="tag">Fundraising</span>
+              <span class="tag">Team Leadership</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="design">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 03 / Design</span>
+          <h2>Designing the product</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div>
+            <div class="design-grid">
+              <div class="reveal">
+                <div
+                  class="venture-top"
+                  style="border-bottom: none; margin-bottom: 0.8rem; padding-bottom: 0"
+                >
+                  <div>
+                    <div class="venture-name">Eduvia</div>
+                    <div class="venture-meta">Product Designer — independent competition project</div>
+                  </div>
+                  <span class="badge teal">1st Place, National UI/UX Design 2026</span>
+                </div>
+                <p
+                  class="prose"
+                  style="max-width: 100%; margin-top: 1rem"
+                >
+                  An accessible learning app designed for users with disabilities, built on the idea that inclusive design shouldn't be a checklist item bolted on at the end. I took it end to end — research, wireframes, a working prototype
+                  — and it placed first at a national competition.
+                </p>
+                <ul class="checklist">
+                  <li>Designed Eduvia end-to-end to make education more intuitive for users with disabilities.</li>
+                  <li>Applied user-centered research, wireframing, and prototyping to win 1st place nationally.</li>
+                </ul>
+                <div class="tags">
+                  <span class="tag">Accessibility</span>
+                  <span class="tag">User-Centered Design</span>
+                  <span class="tag">Wireframing</span>
+                  <span class="tag">Prototyping</span>
+                  <span class="tag">Inclusive Design</span>
+                </div>
+              </div>
+
+              <div class="app-frame frame reveal">
+                <span class="frame-label">EDUVIA / HOME</span>
+                <div class="fc2"></div>
+                <div class="mock-screen">
+                  <div class="mock-bar"></div>
+                  <div class="mock-tile">
+                    <div class="mock-dot"></div>
+                    <div class="mock-lines"><span></span><span></span></div>
+                  </div>
+                  <div class="mock-tile">
+                    <div class="mock-dot"></div>
+                    <div class="mock-lines"><span></span><span></span></div>
+                  </div>
+                  <div class="mock-aa">
+                    <span>Contrast<br />AA · AAA</span>
+                    <b class="big">Aa</b>
+                    <span>Tap target<br />≥ 48px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 04 / Leadership</span>
+          <h2>Everything running in parallel</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div class="rows reveal">
+            <div class="row">
+              <div class="yr">2026</div>
+              <div>
+                <h3>Head of Media &amp; Information Division</h3>
+                <div class="org">Student Research Group</div>
+                <p>Led content strategy and information distribution to members and external stakeholders; coordinated a divisional team managing social presence and documentation.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="yr">2026</div>
+              <div>
+                <h3>Teaching Assistant, Business Process Modeling</h3>
+                <div class="org">Universitas Brawijaya</div>
+                <p>Guided students applying BPMN techniques in weekly lab sessions; supported design and evaluation of process models for real-world case studies.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="yr">2025</div>
+              <div>
+                <h3>Expert Staff, Aspiration &amp; External Affairs</h3>
+                <div class="org">KBMDSI Student Senate</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="yr">2025</div>
+              <div>
+                <h3>Junior Staff, Media &amp; Information (K-Risma)</h3>
+                <div class="org">Universitas Brawijaya</div>
+                <p>Managed information distribution and content updates across K-Risma's social accounts.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="yr">2024</div>
+              <div>
+                <h3>Treasurer, Prom Night Class of 42</h3>
+                <div class="org">Event Committee</div>
+                <p>Managed a combined event budget of IDR 400,000,000 across two events with 100% accountability; negotiated 10–15% cost savings with vendors and venues, holding budget efficiency up to 95%.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 05 / Awards</span>
+          <h2>The scoreboard</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div class="awards reveal">
+            <div class="award">
+              <div class="rank gold">1st</div>
+              <div>
+                <div class="title">National UI/UX Design Competition</div>
+                <div class="sub">"Eduvia" — an inclusive learning app for users with disabilities</div>
+              </div>
+              <div class="yr">2026</div>
+            </div>
+            <div class="award">
+              <div class="rank bronze">3rd</div>
+              <div>
+                <div class="title">National Business Plan Competition — Circular Economy</div>
+                <div class="sub">Apparel-waste management innovation</div>
+              </div>
+              <div class="yr">Bronze</div>
+            </div>
+            <div class="award">
+              <div class="rank teal">T7</div>
+              <div>
+                <div class="title">Business Plan Competition — Circular Economy</div>
+                <div class="sub">Coffee-husk-to-biochar conversion, Top 7 nationally</div>
+              </div>
+              <div class="yr">2026</div>
+            </div>
+            <div class="award">
+              <div class="rank bronze">3rd</div>
+              <div>
+                <div class="title">International Code Competition</div>
+                <div class="sub">Economics &amp; Business track</div>
+              </div>
+              <div class="yr">2024</div>
+            </div>
+            <div class="award">
+              <div class="rank gold">1st</div>
+              <div>
+                <div class="title">National Student Math Olympiad</div>
+                <div class="sub">72nd &amp; 73rd editions</div>
+              </div>
+              <div class="yr">2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 06 / Skills</span>
+          <h2>What I bring to the table</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div class="skill-cols reveal">
+            <div class="skill-col">
+              <h3>Business &amp; Strategy</h3>
+              <ul>
+                <li>Business plan development</li>
+                <li>Market research</li>
+                <li>Financial &amp; budget management</li>
+                <li>Strategic planning</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h3>Design &amp; Product</h3>
+              <ul>
+                <li>UI/UX design &amp; prototyping</li>
+                <li>User-centered design</li>
+                <li>Business process modeling (BPMN)</li>
+              </ul>
+            </div>
+            <div class="skill-col">
+              <h3>Leadership &amp; Tools</h3>
+              <ul>
+                <li>Team leadership</li>
+                <li>Cross-functional coordination</li>
+                <li>Microsoft Office &amp; Google Workspace</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx">§ 07 / Education</span>
+          <h2>Where the fundamentals come from</h2>
+        </div>
+        <div class="section-body">
+          <span class="spacer"></span>
+          <div class="rows reveal">
+            <div class="row row-edu">
+              <div class="yr">2024—Now</div>
+              <div>
+                <h3>B.S. Information Systems</h3>
+                <div class="org">Universitas Brawijaya, Malang · 5th Semester</div>
+              </div>
+              <div class="gpa-badge"><b>3.62</b><span>/ 4.00 GPA</span></div>
+            </div>
+            <div class="row row-edu">
+              <div class="yr">2021—2024</div>
+              <div>
+                <h3>Mathematics &amp; Natural Sciences</h3>
+                <div class="org">SMA Santo Thomas 2 Medan</div>
+              </div>
+              <div class="gpa-badge"><b>94.53</b><span>/ 100 avg.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="wrap">
+        <p class="sign reveal">Building the case and the interface — open to product, design, and venture conversations.</p>
+        <div class="contact-grid reveal">
+          <div>
+            <div class="k">Email</div>
+            <a href="mailto:metteusaragih@gmail.com">metteusaragih@gmail.com</a>
+          </div>
+          <div>
+            <div class="k">Phone</div>
+            <span>+62 823-8429-4702</span>
+          </div>
+          <div>
+            <div class="k">LinkedIn</div>
+            <a
+              href="https://linkedin.com/in/metteuaksaragih"
+              target="_blank"
+              rel="noopener"
+              >/in/metteuaksaragih</a
+            >
+          </div>
+          <div>
+            <div class="k">CV</div>
+            <a
+              href="https://drive.google.com/file/d/1coF19e7xczGG4fWlsDOJ3YvdQvQ2I3y9/view?usp=sharing"
+              target="_blank"
+              rel="noopener"
+              >View resume ↗</a
+            >
+          </div>
+          <div>
+            <div class="k">Based in</div>
+            <span>Malang, East Java, ID</span>
+          </div>
+        </div>
+        <div class="fineprint">
+          <span>Metteu AK Saragih — Business Development &amp; UI/UX Design</span>
+          <span>Updated 2026</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var links = document.querySelectorAll('#pagenav a');
+        var sections = Array.prototype.map.call(links, function (a) {
+          return document.querySelector(a.getAttribute('href'));
+        });
+
+        if ('IntersectionObserver' in window) {
+          var navObs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                var id = '#' + entry.target.id;
+                var link = document.querySelector('#pagenav a[href="' + id + '"]');
+                if (!link) return;
+                if (entry.isIntersecting) {
+                  links.forEach(function (l) {
+                    l.classList.remove('active');
+                  });
+                  link.classList.add('active');
+                }
+              });
+            },
+            { rootMargin: '-40% 0px -55% 0px' },
+          );
+          sections.forEach(function (s) {
+            if (s) navObs.observe(s);
+          });
+
+          var revealObs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in');
+                  revealObs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12 },
+          );
+          document.querySelectorAll('.reveal').forEach(function (el) {
+            revealObs.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.reveal').forEach(function (el) {
+            el.classList.add('in');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
