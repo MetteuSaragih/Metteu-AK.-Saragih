@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://GANTI-DENGAN-DOMAIN-KAMU.vercel.app/sitemap.xml
